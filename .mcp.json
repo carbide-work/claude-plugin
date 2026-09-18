@@ -1,0 +1,6 @@
+{
+  "carbide": {
+    "type": "http",
+    "url": "https://app.carbide.work/mcp"
+  }
+}

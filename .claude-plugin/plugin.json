@@ -1,0 +1,20 @@
+{
+  "name": "carbide",
+  "version": "0.4.0",
+  "description": "Run and configure your contracting operations from Claude Code.",
+  "author": {
+    "name": "Carbide",
+    "email": "support@carbide.work",
+    "url": "https://www.carbide.work"
+  },
+  "homepage": "https://www.carbide.work",
+  "repository": "https://github.com/carbide-work/claude-plugin",
+  "license": "MIT",
+  "keywords": [
+    "contracting",
+    "crm",
+    "scheduling",
+    "production",
+    "operations"
+  ]
+}
