@@ -6,6 +6,7 @@ description: Manage Carbide production jobs, scope, teams, blocks, crews, constr
 # Carbide production management
 
 1. Resolve the job, blocks, crews, crew members, constraints, and requirements with `search_operational_records` and the production list tools.
+   When promoting a request, omit `blocks` to create one default block containing every active trade, or supply `blocks` to create exactly that initial plan and enable block-based planning.
 2. For schedule changes, call `simulate_production_plan` with the proposed changes and locks. Explain conflicts, shortages, and non-applicable scenarios.
 3. Call `apply_plan_scenario` only for a valid scenario that matches the user's requested change. Never use it to acknowledge unresolved conflicts.
 4. Use the typed job, block, team, color, constraint, checklist, and check-in tools for the smallest change. Re-read the affected records afterward.
