@@ -2,7 +2,7 @@
 
 This package is prepared for Anthropic's reviewed `claude-community` marketplace. The official `claude-plugins-official` marketplace is curated separately by Anthropic and has no application process.
 
-Version `2.2.0` adds Canadian FSA polygons to estimator territory configuration. Version `2.1.0` added a PaintScout quote creation trigger setting and configuration tool.
+Version `3.0.0` replaces project-manager and check-in tools with organization-defined scheduling roles and Members. Version `2.2.0` added Canadian FSA polygons to estimator territory configuration.
 
 ## Submission values
 
@@ -10,7 +10,7 @@ Version `2.2.0` adds Canadian FSA polygons to estimator territory configuration.
 - Plugin ID: `carbide`
 - Publisher: Carbide
 - Category: Productivity
-- Version: `2.2.0`
+- Version: `3.0.0`
 - Public source repository: `https://github.com/carbide-work/claude-plugin`
 - Homepage: `https://www.carbide.work`
 - Support: `https://www.carbide.work/support`
@@ -35,7 +35,7 @@ Keep `apps/claude` canonical in the private Carbide repository. From a clean, co
 ```sh
 git subtree split --prefix=apps/claude --branch claude-plugin-release
 git push git@github.com:carbide-work/claude-plugin.git claude-plugin-release:main
-git push git@github.com:carbide-work/claude-plugin.git claude-plugin-release:refs/tags/v2.2.0
+git push git@github.com:carbide-work/claude-plugin.git claude-plugin-release:refs/tags/v3.0.0
 git branch -D claude-plugin-release
 ```
 
@@ -67,6 +67,6 @@ Create a dedicated reviewer user without MFA in a fully seeded demo organization
 3. With a current Claude Code release, run `claude plugin validate apps/claude --strict` and repeat it against a clean clone of the public mirror.
 4. Start `claude --plugin-dir apps/claude`, run `/mcp`, and complete OAuth from a clean browser.
 5. Verify all nine skills appear and exercise the positive and negative review cases with the dedicated reviewer account.
-6. Confirm MCP initialization and both portable plugin manifests advertise version `2.2.0`.
+6. Confirm MCP initialization and both portable plugin manifests advertise version `3.0.0`.
 7. Submit through `https://platform.claude.com/plugins/submit` or, for a Team or Enterprise organization owner, `https://claude.ai/admin-settings/directory/submissions/plugins/new`.
 8. After approval and the nightly catalog sync, verify `claude plugin install carbide@claude-community` succeeds.
