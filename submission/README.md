@@ -2,7 +2,7 @@
 
 This package is prepared for Anthropic's reviewed `claude-community` marketplace. The official `claude-plugins-official` marketplace is curated separately by Anthropic and has no application process.
 
-Version `4.1.0` exposes the public booking page's commercial booking setting and Request Link customer-type presets. Version `4.0.1` restores nearby-first address suggestions while keeping specific out-of-area addresses searchable. Version `4.0.0` replaced crew role minimums with team individual capacity defaults and declared crew seats. Version `3.0.0` introduced organization-defined scheduling roles and Members.
+Version `4.1.0` exposes the public booking page's commercial booking setting and Request Link customer-type presets. Version `4.0.2` offers English Phone Agent voices from the refreshed catalog only after a valid preview is stored. Version `4.0.1` restored nearby-first address suggestions while keeping specific out-of-area addresses searchable. Version `4.0.0` replaced crew role minimums with team individual capacity defaults and declared crew seats. Version `3.0.0` introduced organization-defined scheduling roles and Members.
 
 ## Submission values
 
