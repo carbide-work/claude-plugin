@@ -11,6 +11,21 @@ Start by reading the current state with `get_organization`, member and profile l
 - Make the smallest requested configuration change and re-read it afterward.
 - Add staff profiles before assigning their availability, territory, crew membership, trades, or skills.
 - For production teams, create crew members before crews, then attach members and capabilities with exact IDs.
-- Treat member deactivation, role changes, removals, and assignment replacement as consequential. State the target and effect before calling the tool.
+- Treat member deactivation, role changes, removals, and assignment or routing rule replacement as consequential. State the target and effect before calling the tool.
+
+## Routing rules
+
+When the routing rules tools are listed, the organization routes with an ordered rule list instead of the assignment configuration.
+
+- Read `get_estimator_routing_rules` and `get_estimator_routing_rules_source` first. A `derived_from_v1` source means the list is an unsaved draft and the first replace switches routing over.
+- Each rule is a verb (select, exclude, prioritize, deprioritize) applied to the estimators its qualifier picks: who match or don't match an attribute, with highest or lowest of a ranked value, or chosen estimators.
+- Send the complete ordered list to `replace_estimator_routing_rules`; a rule left out is deleted. Run `simulate_estimator_routing` with a realistic request before and after a change, and describe the difference.
+- CSR rules work the same way through `get_csr_routing_rules`, `replace_csr_routing_rules` and `simulate_csr_routing`; CSR ids are user ids from `list_dispatcher_profiles`.
+
+## Estimator settings
+
+- `list_estimator_profiles` returns every estimator setting, preference levels per project area, the performance rate (owners and admins only) and a `settings_url`. Add an anchor such as `#performance-rate` to point a person at one setting.
+- Preference levels go through `update_estimator_profile_project_areas`, the rate through `update_estimator_profile_performance_rate`, and "use default" switches through `set_estimator_setting_default`.
+- Sales targets: `list_sales_targets`, then `create_estimator_sales_target`, `update_sales_target` or `delete_estimator_sales_target`. Work addresses: `list_estimator_work_addresses` and the create, update and delete tools.
 
 Organization and production-team setup requires `mcp.write` and an owner or administrator role. This includes verified addresses, trades, skills, requirements, crew members, crews, memberships, leads, and capabilities. Day-to-day job scheduling and job-team changes use `mcp.operate`; underlying Carbide policies remain authoritative.

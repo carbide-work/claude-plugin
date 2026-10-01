@@ -2,7 +2,7 @@
 
 This package is prepared for Anthropic's reviewed `claude-community` marketplace. The official `claude-plugins-official` marketplace is curated separately by Anthropic and has no application process.
 
-Version `4.1.0` exposes the public booking page's commercial booking setting and Request Link customer-type presets. Version `4.0.3` clarifies HubSpot automatic-update controls when optional journal polling runs alongside push webhooks; tool names and payloads are unchanged. Version `4.0.2` offers English Phone Agent voices from the refreshed catalog only after a valid preview is stored. Version `4.0.1` restored nearby-first address suggestions while keeping specific out-of-area addresses searchable. Version `4.0.0` replaced crew role minimums with team individual capacity defaults and declared crew seats. Version `3.0.0` introduced organization-defined scheduling roles and Members.
+Version `4.2.0` exposes the public booking page's commercial booking setting and Request Link customer-type presets. Version `4.1.0` adds tools to read, replace and simulate the estimator and CSR routing rules (where routing rules are enabled) and to manage every estimator setting, including preference levels, performance rates, sales targets, work addresses and "use default" switches. Version `4.0.3` clarifies HubSpot automatic-update controls when optional journal polling runs alongside push webhooks; tool names and payloads are unchanged. Version `4.0.2` offers English Phone Agent voices from the refreshed catalog only after a valid preview is stored. Version `4.0.1` restored nearby-first address suggestions while keeping specific out-of-area addresses searchable. Version `4.0.0` replaced crew role minimums with team individual capacity defaults and declared crew seats. Version `3.0.0` introduced organization-defined scheduling roles and Members.
 
 ## Submission values
 
@@ -10,7 +10,7 @@ Version `4.1.0` exposes the public booking page's commercial booking setting and
 - Plugin ID: `carbide`
 - Publisher: Carbide
 - Category: Productivity
-- Version: `4.1.0`
+- Version: `4.2.0`
 - Public source repository: `https://github.com/carbide-work/claude-plugin`
 - Homepage: `https://www.carbide.work`
 - Support: `https://www.carbide.work/support`
@@ -35,7 +35,7 @@ Keep `apps/claude` canonical in the private Carbide repository. From a clean, co
 ```sh
 git subtree split --prefix=apps/claude --branch claude-plugin-release
 git push git@github.com:carbide-work/claude-plugin.git claude-plugin-release:main
-git push git@github.com:carbide-work/claude-plugin.git claude-plugin-release:refs/tags/v4.1.0
+git push git@github.com:carbide-work/claude-plugin.git claude-plugin-release:refs/tags/v4.2.0
 git branch -D claude-plugin-release
 ```
 
@@ -67,6 +67,6 @@ Create a dedicated reviewer user without MFA in a fully seeded demo organization
 3. With a current Claude Code release, run `claude plugin validate apps/claude --strict` and repeat it against a clean clone of the public mirror.
 4. Start `claude --plugin-dir apps/claude`, run `/mcp`, and complete OAuth from a clean browser.
 5. Verify all nine skills appear and exercise the positive and negative review cases with the dedicated reviewer account.
-6. Confirm MCP initialization and both portable plugin manifests advertise version `4.1.0`.
+6. Confirm MCP initialization and both portable plugin manifests advertise version `4.2.0`.
 7. Submit through `https://platform.claude.com/plugins/submit` or, for a Team or Enterprise organization owner, `https://claude.ai/admin-settings/directory/submissions/plugins/new`.
 8. After approval and the nightly catalog sync, verify `claude plugin install carbide@claude-community` succeeds.
