@@ -2,7 +2,7 @@
 
 This package is prepared for Anthropic's reviewed `claude-community` marketplace. The official `claude-plugins-official` marketplace is curated separately by Anthropic and has no application process.
 
-Version `5.1.0` lets request listings filter and sort by whether the customer asked for a callback that is still open. Version `5.0.1` removes guidance for Carbide's retired in-app assistant from the diagnostic instructions; tool names and payloads are unchanged. Version `5.0.0` removes the `unlock_block` change kind from production-plan simulation and apply, because work blocks no longer carry a saved date lock; lock-removal resolutions now only unpin a job start. Version `4.3.0` exposes the public booking page's commercial booking setting and Request Link customer-type presets. Version `4.2.0` adds selected hours/value production settings, explicit block value allocations, and atomic crew and member profile updates to production planning. Version `4.1.0` adds tools to read, replace and simulate the estimator and CSR routing rules (where routing rules are enabled) and to manage every estimator setting, including preference levels, performance rates, sales targets, work addresses and "use default" switches. Version `4.0.3` clarifies HubSpot automatic-update controls when optional journal polling runs alongside push webhooks; tool names and payloads are unchanged. Version `4.0.2` offers English Phone Agent voices from the refreshed catalog only after a valid preview is stored. Version `4.0.1` restored nearby-first address suggestions while keeping specific out-of-area addresses searchable. Version `4.0.0` replaced crew role minimums with team individual capacity defaults and declared crew seats. Version `3.0.0` introduced organization-defined scheduling roles and Members.
+Version `1.12.0` lets request listings filter and sort by whether the customer asked for a callback that is still open. Version `1.11.0` adds Google Tag Manager container selection and independent Google Analytics and Tag Manager controls to the MCP configuration tools and packaged integration guidance. Version `1.10.0` was the first marketplace submission. It rebases the unpublished internal `2.0.0`–`5.0.0` labels onto the `1.x` line that began at `1.0.0`. Ten additive capability milestones account for the minor version: Meta Pixel and job blocks; Dialpad SMS and templates; PaintScout quote controls; Canadian territories; scheduling roles and Members; commercial booking; declared crew capacity; estimator and CSR routing controls; production units and planning; and public booking and Request Link customer-type options. That release also folded in compatible fixes, including removal of guidance for the retired in-app assistant; its tool names and payloads were unchanged. The current production-plan contract omits the obsolete `unlock_block` change kind.
 
 ## Submission values
 
@@ -10,7 +10,7 @@ Version `5.1.0` lets request listings filter and sort by whether the customer as
 - Plugin ID: `carbide`
 - Publisher: Carbide
 - Category: Productivity
-- Version: `5.1.0`
+- Version: `1.12.0`
 - Public source repository: `https://github.com/carbide-work/claude-plugin`
 - Homepage: `https://www.carbide.work`
 - Support: `https://www.carbide.work/support`
@@ -35,7 +35,7 @@ Keep `apps/claude` canonical in the private Carbide repository. From a clean, co
 ```sh
 git subtree split --prefix=apps/claude --branch claude-plugin-release
 git push git@github.com:carbide-work/claude-plugin.git claude-plugin-release:main
-git push git@github.com:carbide-work/claude-plugin.git claude-plugin-release:refs/tags/v5.1.0
+git push git@github.com:carbide-work/claude-plugin.git claude-plugin-release:refs/tags/v1.12.0
 git branch -D claude-plugin-release
 ```
 
@@ -67,6 +67,6 @@ Create a dedicated reviewer user without MFA in a fully seeded demo organization
 3. With a current Claude Code release, run `claude plugin validate apps/claude --strict` and repeat it against a clean clone of the public mirror.
 4. Start `claude --plugin-dir apps/claude`, run `/mcp`, and complete OAuth from a clean browser.
 5. Verify all nine skills appear and exercise the positive and negative review cases with the dedicated reviewer account.
-6. Confirm MCP initialization and both portable plugin manifests advertise version `5.1.0`.
+6. Confirm MCP initialization and both portable plugin manifests advertise version `1.12.0` after deploying the server change.
 7. Submit through `https://platform.claude.com/plugins/submit` or, for a Team or Enterprise organization owner, `https://claude.ai/admin-settings/directory/submissions/plugins/new`.
 8. After approval and the nightly catalog sync, verify `claude plugin install carbide@claude-community` succeeds.
