@@ -10,6 +10,7 @@ description: Manage Carbide production jobs, scope, teams, blocks, crews, constr
 2. For schedule changes, call `simulate_production_plan` with the proposed changes and locks. Explain conflicts, shortages, and non-applicable scenarios.
 3. Call `apply_plan_scenario` only for a valid scenario that matches the user's requested change. Never use it to acknowledge unresolved conflicts.
 4. Use the typed job, block, team, color, constraint, checklist, and check-in tools for the smallest change. Re-read the affected records afterward.
+   A block's `days` list each productive day (numbered from 0) with its effective crew size, trades, named people and notes. To change a single day, use `update_block_day`, `assign_block_day_members` or `reset_block_day` instead of editing the whole block; a day with more or fewer people changes how many days the block takes.
 5. Treat job archival, completion, final check-in submission, and removals as consequential; identify the exact record and effect before acting.
 
 These tools appear only for organizations with production scheduling enabled. Job execution mutations require `mcp.operate`; archiving a job, changing its team, extending an appointment, and requesting a project check-in are shown only to owners and administrators. Production catalogue and crew roster or capability setup requires `mcp.write` and an administrator role. The user's ordinary Carbide authorization remains authoritative.
