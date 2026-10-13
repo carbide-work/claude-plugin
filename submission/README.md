@@ -2,7 +2,7 @@
 
 This package is prepared for Anthropic's reviewed `claude-community` marketplace. The official `claude-plugins-official` marketplace is curated separately by Anthropic and has no application process.
 
-Version `2.0.0` retires job block mode, which removes fields. `update_job_scope` no longer accepts `use_blocks` or `crew_size`, and job records the MCP tools return no longer include `use_blocks`. Every job plans with its blocks: a job's `labor_hours` and `value_cents` are its estimate and no longer change its single block, so set a block's hours, crew size and duration with the block tools. `promote_request_to_production` still creates one default block unless `blocks` is given. Other tool names and payloads are unchanged. This first published major version is unrelated to the unpublished internal `2.0.0` label that `1.10.0` rebased.
+Version `1.20.0` retires job block mode. `update_job_scope` no longer accepts `use_blocks` or `crew_size`, and job records the MCP tools return no longer include `use_blocks`. Every job plans with its blocks: a job's `labor_hours` and `value_cents` are its estimate and no longer change its single block, so set a block's hours, crew size and duration with the block tools. `promote_request_to_production` still creates one default block unless `blocks` is given. Other tool names and payloads are unchanged.
 
 Version `1.19.1` lets `cancel_appointment` cancel a booked appointment that has already ended or has no calendar event; cancelling an appointment that has already ended sends no customer or estimator messages. Tool names and payloads are unchanged.
 
@@ -16,7 +16,7 @@ Version `1.18.0` adds optional machine-name input to custom-field creation and u
 - Plugin ID: `carbide`
 - Publisher: Carbide
 - Category: Productivity
-- Version: `2.0.0`
+- Version: `1.20.0`
 - Public source repository: `https://github.com/carbide-work/claude-plugin`
 - Homepage: `https://www.carbide.work`
 - Support: `https://www.carbide.work/support`
@@ -41,7 +41,7 @@ Keep `apps/claude` canonical in the private Carbide repository. From a clean, co
 ```sh
 git subtree split --prefix=apps/claude --branch claude-plugin-release
 git push git@github.com:carbide-work/claude-plugin.git claude-plugin-release:main
-git push git@github.com:carbide-work/claude-plugin.git claude-plugin-release:refs/tags/v2.0.0
+git push git@github.com:carbide-work/claude-plugin.git claude-plugin-release:refs/tags/v1.20.0
 git branch -D claude-plugin-release
 ```
 
@@ -73,6 +73,6 @@ Create a dedicated reviewer user without MFA in a fully seeded demo organization
 3. With a current Claude Code release, run `claude plugin validate apps/claude --strict` and repeat it against a clean clone of the public mirror.
 4. Start `claude --plugin-dir apps/claude`, run `/mcp`, and complete OAuth from a clean browser.
 5. Verify all nine skills appear and exercise the positive and negative review cases with the dedicated reviewer account.
-6. Confirm MCP initialization and both portable plugin manifests advertise version `2.0.0` after deploying the server change.
+6. Confirm MCP initialization and both portable plugin manifests advertise version `1.20.0` after deploying the server change.
 7. Submit through `https://platform.claude.com/plugins/submit` or, for a Team or Enterprise organization owner, `https://claude.ai/admin-settings/directory/submissions/plugins/new`.
 8. After approval and the nightly catalog sync, verify `claude plugin install carbide@claude-community` succeeds.
