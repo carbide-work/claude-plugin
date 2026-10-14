@@ -2,6 +2,8 @@
 
 This package is prepared for Anthropic's reviewed `claude-community` marketplace. The official `claude-plugins-official` marketplace is curated separately by Anthropic and has no application process.
 
+Version `1.24.0` adds `embed_allowed_origins`, the websites allowed to embed the booking page, to the public page record that `update_public_page_profile` returns. The tool does not change it: owners and admins manage the list in the web app. Existing tool names and input payloads are unchanged.
+
 Version `1.23.0` adds contact-owner IDs and relationships to contact-method and company-contact result schemas while preserving existing tool names and inputs. Staff customer and appointment workflows now use the private GraphQL API; behavioral resources document their pagination and live-refresh rules.
 
 Version `1.22.0` adds the `browser_tracking_enabled` connection field to existing Google Analytics mutation results. The web app can disable direct GA4 browser tracking while retaining server Measurement Protocol events, so a GTM container can own browser tracking. Existing connections keep direct browser tracking enabled by default.
@@ -22,7 +24,7 @@ Version `1.18.0` adds optional machine-name input to custom-field creation and u
 - Plugin ID: `carbide`
 - Publisher: Carbide
 - Category: Productivity
-- Version: `1.23.0`
+- Version: `1.24.0`
 - Public source repository: `https://github.com/carbide-work/claude-plugin`
 - Homepage: `https://www.carbide.work`
 - Support: `https://www.carbide.work/support`
@@ -47,7 +49,7 @@ Keep `apps/claude` canonical in the private Carbide repository. From a clean, co
 ```sh
 git subtree split --prefix=apps/claude --branch claude-plugin-release
 git push git@github.com:carbide-work/claude-plugin.git claude-plugin-release:main
-git push git@github.com:carbide-work/claude-plugin.git claude-plugin-release:refs/tags/v1.23.0
+git push git@github.com:carbide-work/claude-plugin.git claude-plugin-release:refs/tags/v1.24.0
 git branch -D claude-plugin-release
 ```
 
@@ -79,6 +81,6 @@ Create a dedicated reviewer user without MFA in a fully seeded demo organization
 3. With a current Claude Code release, run `claude plugin validate apps/claude --strict` and repeat it against a clean clone of the public mirror.
 4. Start `claude --plugin-dir apps/claude`, run `/mcp`, and complete OAuth from a clean browser.
 5. Verify all nine skills appear and exercise the positive and negative review cases with the dedicated reviewer account.
-6. Confirm MCP initialization and both portable plugin manifests advertise version `1.23.0` after deploying the server change.
+6. Confirm MCP initialization and both portable plugin manifests advertise version `1.24.0` after deploying the server change.
 7. Submit through `https://platform.claude.com/plugins/submit` or, for a Team or Enterprise organization owner, `https://claude.ai/admin-settings/directory/submissions/plugins/new`.
 8. After approval and the nightly catalog sync, verify `claude plugin install carbide@claude-community` succeeds.
