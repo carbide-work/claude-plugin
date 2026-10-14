@@ -2,6 +2,8 @@
 
 This package is prepared for Anthropic's reviewed `claude-community` marketplace. The official `claude-plugins-official` marketplace is curated separately by Anthropic and has no application process.
 
+Version `1.24.1` documents Production settings live updates, draft preservation, and directory pagination in the hosted operating manual. Existing tool names, inputs, and result schemas are unchanged.
+
 Version `1.24.0` adds `embed_allowed_origins`, the websites allowed to embed the booking page, to the public page record that `update_public_page_profile` returns. The tool does not change it: owners and admins manage the list in the web app. Existing tool names and input payloads are unchanged.
 
 Version `1.23.0` adds contact-owner IDs and relationships to contact-method and company-contact result schemas while preserving existing tool names and inputs. Staff customer and appointment workflows now use the private GraphQL API; behavioral resources document their pagination and live-refresh rules.
@@ -24,7 +26,7 @@ Version `1.18.0` adds optional machine-name input to custom-field creation and u
 - Plugin ID: `carbide`
 - Publisher: Carbide
 - Category: Productivity
-- Version: `1.24.0`
+- Version: `1.24.1`
 - Public source repository: `https://github.com/carbide-work/claude-plugin`
 - Homepage: `https://www.carbide.work`
 - Support: `https://www.carbide.work/support`
