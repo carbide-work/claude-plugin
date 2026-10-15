@@ -1,5 +1,7 @@
 # Carbide Claude community submission
 
+Version `1.27.0` adds nullable `matching_crew_ids` to crew-skill violation details in production-plan results. The list identifies other active, non-archived crews covering all missing skills; an empty list means none. Skill coverage alone does not guarantee a verified schedule repair. Existing tool names, inputs and apply confirmation remain unchanged.
+
 Version `1.26.0` adds an optional `typed_location_kind` to request creation for ZIP/postal-code locations. Approximate locations retain coordinates for distance estimates, create no property or Zillow lookup, and require a full street address before booking. Existing street-address searches and property workflows remain available.
 
 This package is prepared for Anthropic's reviewed `claude-community` marketplace. The official `claude-plugins-official` marketplace is curated separately by Anthropic and has no application process.
@@ -30,7 +32,7 @@ Version `1.18.0` adds optional machine-name input to custom-field creation and u
 - Plugin ID: `carbide`
 - Publisher: Carbide
 - Category: Productivity
-- Version: `1.26.0`
+- Version: `1.27.0`
 - Public source repository: `https://github.com/carbide-work/claude-plugin`
 - Homepage: `https://www.carbide.work`
 - Support: `https://www.carbide.work/support`
@@ -55,7 +57,7 @@ Keep `apps/claude` canonical in the private Carbide repository. From a clean, co
 ```sh
 git subtree split --prefix=apps/claude --branch claude-plugin-release
 git push git@github.com:carbide-work/claude-plugin.git claude-plugin-release:main
-git push git@github.com:carbide-work/claude-plugin.git claude-plugin-release:refs/tags/v1.24.0
+git push git@github.com:carbide-work/claude-plugin.git claude-plugin-release:refs/tags/v1.27.0
 git branch -D claude-plugin-release
 ```
 
@@ -87,6 +89,6 @@ Create a dedicated reviewer user without MFA in a fully seeded demo organization
 3. With a current Claude Code release, run `claude plugin validate apps/claude --strict` and repeat it against a clean clone of the public mirror.
 4. Start `claude --plugin-dir apps/claude`, run `/mcp`, and complete OAuth from a clean browser.
 5. Verify all nine skills appear and exercise the positive and negative review cases with the dedicated reviewer account.
-6. Confirm MCP initialization and both portable plugin manifests advertise version `1.24.0` after deploying the server change.
+6. Confirm MCP initialization and both portable plugin manifests advertise version `1.27.0` after deploying the server change.
 7. Submit through `https://platform.claude.com/plugins/submit` or, for a Team or Enterprise organization owner, `https://claude.ai/admin-settings/directory/submissions/plugins/new`.
 8. After approval and the nightly catalog sync, verify `claude plugin install carbide@claude-community` succeeds.
