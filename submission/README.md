@@ -2,6 +2,8 @@
 
 This package is prepared for Anthropic's reviewed `claude-community` marketplace. The official `claude-plugins-official` marketplace is curated separately by Anthropic and has no application process.
 
+Version `1.25.0` adds an optional `display` flag to note results from `create_note`, `update_note` and `search_operational_records`; it is true when staff marked a request note to appear in staff calendar events and emails. Tool names and inputs are unchanged.
+
 Version `1.24.1` documents Production settings live updates, draft preservation, and directory pagination in the hosted operating manual. Existing tool names, inputs, and result schemas are unchanged.
 
 Version `1.24.0` adds `embed_allowed_origins`, the websites allowed to embed the booking page, to the public page record that `update_public_page_profile` returns. The tool does not change it: owners and admins manage the list in the web app. Existing tool names and input payloads are unchanged.
