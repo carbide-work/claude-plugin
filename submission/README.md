@@ -1,5 +1,7 @@
 # Carbide Claude community submission
 
+Version `1.26.0` adds an optional `typed_location_kind` to request creation for ZIP/postal-code locations. Approximate locations retain coordinates for distance estimates, create no property or Zillow lookup, and require a full street address before booking. Existing street-address searches and property workflows remain available.
+
 This package is prepared for Anthropic's reviewed `claude-community` marketplace. The official `claude-plugins-official` marketplace is curated separately by Anthropic and has no application process.
 
 Version `1.25.0` adds an optional `display` flag to note results from `create_note`, `update_note` and `search_operational_records`; it is true when staff marked a request note to appear in staff calendar events and emails. Tool names and inputs are unchanged.
@@ -28,7 +30,7 @@ Version `1.18.0` adds optional machine-name input to custom-field creation and u
 - Plugin ID: `carbide`
 - Publisher: Carbide
 - Category: Productivity
-- Version: `1.24.1`
+- Version: `1.26.0`
 - Public source repository: `https://github.com/carbide-work/claude-plugin`
 - Homepage: `https://www.carbide.work`
 - Support: `https://www.carbide.work/support`
