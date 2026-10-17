@@ -1,5 +1,7 @@
 # Carbide Claude community submission
 
+Version `2.0.1` makes request intake discovery agree with the app: requests without a recorded form submission follow the latest published Internal Form across all creation channels. Actual submissions retain their immutable version. Tool names and input/output schemas are unchanged.
+
 Version `2.0.0` replaces the prelaunch job-color tool contract with one assignment per job, area and substrate. `create_job_color` and `update_job_color` take organization-owned area, substrate, color, product and finish option IDs instead of free-text catalog snapshots. `search_paint_options` and `find_or_create_paint_option` discover and create those reusable choices. Duplicate area/substrate pairs are refused; color records expose their five option IDs and display labels.
 
 Version `1.27.0` adds nullable `matching_crew_ids` to crew-skill violation details in production-plan results. The list identifies other active, non-archived crews covering all missing skills; an empty list means none. Skill coverage alone does not guarantee a verified schedule repair. Existing tool names, inputs and apply confirmation remain unchanged.
