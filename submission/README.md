@@ -1,5 +1,7 @@
 # Carbide Claude community submission
 
+Version `2.1.0` adds two customer email templates for organizations with Job Scheduling, `job_start_tentative` and `job_start_confirmed`, which tell a job's customer its tentative or confirmed start date. `list_email_templates` returns them and `preview_email_template` and `update_email_template` accept them only for those organizations; other organizations never see them. Their placeholders include `{job.start_date}`, `{job.start_day_of_week}` and `{job.number}`. Existing tool names and payloads are unchanged.
+
 Version `2.0.1` makes request intake discovery agree with the app: requests without a recorded form submission follow the latest published Internal Form across all creation channels. Actual submissions retain their immutable version. Tool names and input/output schemas are unchanged.
 
 Version `2.0.0` replaces the prelaunch job-color tool contract with one assignment per job, area and substrate. `create_job_color` and `update_job_color` take organization-owned area, substrate, color, product and finish option IDs instead of free-text catalog snapshots. `search_paint_options` and `find_or_create_paint_option` discover and create those reusable choices. Duplicate area/substrate pairs are refused; color records expose their five option IDs and display labels.
@@ -36,7 +38,7 @@ Version `1.18.0` adds optional machine-name input to custom-field creation and u
 - Plugin ID: `carbide`
 - Publisher: Carbide
 - Category: Productivity
-- Version: `2.0.0`
+- Version: `2.1.0`
 - Public source repository: `https://github.com/carbide-work/claude-plugin`
 - Homepage: `https://www.carbide.work`
 - Support: `https://www.carbide.work/support`
@@ -61,7 +63,7 @@ Keep `apps/claude` canonical in the private Carbide repository. From a clean, co
 ```sh
 git subtree split --prefix=apps/claude --branch claude-plugin-release
 git push git@github.com:carbide-work/claude-plugin.git claude-plugin-release:main
-git push git@github.com:carbide-work/claude-plugin.git claude-plugin-release:refs/tags/v2.0.0
+git push git@github.com:carbide-work/claude-plugin.git claude-plugin-release:refs/tags/v2.1.0
 git branch -D claude-plugin-release
 ```
 
