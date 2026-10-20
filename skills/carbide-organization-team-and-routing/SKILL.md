@@ -5,19 +5,19 @@ description: Audit and configure Carbide organization profile, members, staff ro
 
 # Carbide organization, team, and routing
 
-Start by reading the current state with `get_organization`, member and profile lists, estimator assignment configuration, project areas, trades, skills, requirements, crew members, and crews.
+Start by reading the current state with `get_organization`, member and profile lists, estimator and CSR routing rules, project areas, trades, skills, requirements, crew members, and crews.
 
 - Use `list_health_check_issues` to prioritize missing setup.
 - Make the smallest requested configuration change and re-read it afterward.
 - Add staff profiles before assigning their availability, territory, crew membership, trades, or skills.
 - For production teams, create crew members before crews, then attach members and capabilities with exact IDs.
-- Treat member deactivation, role changes, removals, and assignment or routing rule replacement as consequential. State the target and effect before calling the tool.
+- Treat member deactivation, role changes, removals, and routing rule replacement as consequential. State the target and effect before calling the tool.
 
 ## Routing rules
 
-When the routing rules tools are listed, the organization routes with an ordered rule list instead of the assignment configuration.
+The organization routes estimators and CSRs with ordered rule lists.
 
-- Read `get_estimator_routing_rules` and `get_estimator_routing_rules_source` first. A `derived_from_v1` source means the list is an unsaved draft and the first replace switches routing over.
+- Read `get_estimator_routing_rules` first.
 - Each rule is a verb (select, exclude, prioritize, deprioritize) applied to the estimators its qualifier picks: who match or don't match an attribute, with highest or lowest of a ranked value, or chosen estimators.
 - Send the complete ordered list to `replace_estimator_routing_rules`; a rule left out is deleted. Run `simulate_estimator_routing` with a realistic request before and after a change, and describe the difference.
 - CSR rules work the same way through `get_csr_routing_rules`, `replace_csr_routing_rules` and `simulate_csr_routing`; CSR ids are user ids from `list_dispatcher_profiles`.

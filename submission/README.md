@@ -2,6 +2,8 @@
 
 Release policy: keep this package on 1.x; a major version change requires explicit user consent. Version `1.28.0` supersedes the unapproved 2.x and 3.0.0 version labels; the contract changes recorded in those earlier notes still apply.
 
+Version `1.29.0` makes routing rules the only estimator and CSR routing. `get_estimator_routing_rules`, `replace_estimator_routing_rules`, `simulate_estimator_routing`, `get_csr_routing_rules`, `replace_csr_routing_rules`, `simulate_csr_routing` and `update_estimator_profile_performance_rate` are listed without a feature flag. `get_estimator_assignment_configuration`, `replace_estimator_assignment_configuration` and `get_estimator_routing_rules_source` are removed. Estimator routing rules no longer accept or return `options` or the `prefer` action, and every rule needs a `qualifier`. This is a breaking contract change; clients must use the routing rules tools.
+
 Version `1.28.0` replaces project-requirement tools and job selections with Coordination and Equipment. Equipment adds owned inventory, reservations per work block, date availability, and extra shared stock (default 0). Every job-selected Coordination item appears in its checklist at every status and completes without required notes or a date. Job-wide crew notes are also retired from current job contracts. This is a breaking contract change; clients must use the new coordination names and equipment tools.
 
 Version `2.3.0` makes Request Intake available to every organization with Estimate Scheduling: `get_request_intake_definition` and `evaluate_request_intake` are listed without a separate feature flag, and phone definitions require only Phone Agents. Custom field tool descriptions now describe `public_visible` as controlling whether customers see their own saved answers. Tool names and payloads are unchanged.
@@ -46,7 +48,7 @@ Version `1.18.0` adds optional machine-name input to custom-field creation and u
 - Plugin ID: `carbide`
 - Publisher: Carbide
 - Category: Productivity
-- Version: `1.28.0`
+- Version: `1.29.0`
 - Public source repository: `https://github.com/carbide-work/claude-plugin`
 - Homepage: `https://www.carbide.work`
 - Support: `https://www.carbide.work/support`
@@ -71,7 +73,7 @@ Keep `apps/claude` canonical in the private Carbide repository. From a clean, co
 ```sh
 git subtree split --prefix=apps/claude --branch claude-plugin-release
 git push git@github.com:carbide-work/claude-plugin.git claude-plugin-release:main
-git push git@github.com:carbide-work/claude-plugin.git claude-plugin-release:refs/tags/v1.28.0
+git push git@github.com:carbide-work/claude-plugin.git claude-plugin-release:refs/tags/v1.29.0
 git branch -D claude-plugin-release
 ```
 
