@@ -2,6 +2,8 @@
 
 Release policy: keep this package on 1.x; a major version change requires explicit user consent. Version `1.28.0` supersedes the unapproved 2.x and 3.0.0 version labels; the contract changes recorded in those earlier notes still apply.
 
+Version `1.32.0` adds Schedule Job for organizations with Job Scheduling. `auto_schedule_job` moves an unscheduled production job to `analyzing` and, in the background, places it on the best crew (crew routing rules, ranked by each qualified crew's earliest opening) with a tentative start date; `get_job` shows the result. The crew routing rules returned by `get_crew_routing_rules` now drive that placement. Existing tool names and inputs are unchanged.
+
 Version `1.31.0` adds crew routing rules for organizations with Job Scheduling. `get_crew_routing_rules` reads the ordered rules (seeding the defaults on first read) and `replace_crew_routing_rules` replaces them; rules select, exclude, prioritize or deprioritize crews by customer history, territory, trades, skills or first availability, with conditions on the job's type, territory, category and company. Existing tool names and inputs are unchanged.
 
 Version `1.30.0` gives crews a territory. `update_crew_territory` replaces a crew's postal codes (five-digit US ZIPs and three-character Canadian FSAs) and rebuilds its map outline in the background; `list_crews` returns each crew's `zip_codes`. Existing tool names and inputs are unchanged.
@@ -52,7 +54,7 @@ Version `1.18.0` adds optional machine-name input to custom-field creation and u
 - Plugin ID: `carbide`
 - Publisher: Carbide
 - Category: Productivity
-- Version: `1.31.0`
+- Version: `1.32.0`
 - Public source repository: `https://github.com/carbide-work/claude-plugin`
 - Homepage: `https://www.carbide.work`
 - Support: `https://www.carbide.work/support`
@@ -77,7 +79,7 @@ Keep `apps/claude` canonical in the private Carbide repository. From a clean, co
 ```sh
 git subtree split --prefix=apps/claude --branch claude-plugin-release
 git push git@github.com:carbide-work/claude-plugin.git claude-plugin-release:main
-git push git@github.com:carbide-work/claude-plugin.git claude-plugin-release:refs/tags/v1.31.0
+git push git@github.com:carbide-work/claude-plugin.git claude-plugin-release:refs/tags/v1.32.0
 git branch -D claude-plugin-release
 ```
 
