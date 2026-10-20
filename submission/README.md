@@ -1,5 +1,9 @@
 # Carbide Claude community submission
 
+Release policy: keep this package on 1.x; a major version change requires explicit user consent. Version `1.28.0` supersedes the unapproved 2.x and 3.0.0 version labels; the contract changes recorded in those earlier notes still apply.
+
+Version `1.28.0` replaces project-requirement tools and job selections with Coordination and Equipment. Equipment adds owned inventory, reservations per work block, date availability, and extra shared stock (default 0). Every job-selected Coordination item appears in its checklist at every status and completes without required notes or a date. Job-wide crew notes are also retired from current job contracts. This is a breaking contract change; clients must use the new coordination names and equipment tools.
+
 Version `2.3.0` makes Request Intake available to every organization with Estimate Scheduling: `get_request_intake_definition` and `evaluate_request_intake` are listed without a separate feature flag, and phone definitions require only Phone Agents. Custom field tool descriptions now describe `public_visible` as controlling whether customers see their own saved answers. Tool names and payloads are unchanged.
 
 Version `2.2.0` keeps request intake choices in Settings order and adds an optional `selectable` flag to Project type options in internal intake definitions: `get_request_intake_definition` marks inactive project types `selectable: false`, which staff keep on requests that already have them but are not offered for new selections. Public intake definitions may now require a question that the internal form leaves optional, or the reverse, when the organization sets that on its public form. Tool names and inputs are unchanged.
@@ -42,7 +46,7 @@ Version `1.18.0` adds optional machine-name input to custom-field creation and u
 - Plugin ID: `carbide`
 - Publisher: Carbide
 - Category: Productivity
-- Version: `2.3.0`
+- Version: `1.28.0`
 - Public source repository: `https://github.com/carbide-work/claude-plugin`
 - Homepage: `https://www.carbide.work`
 - Support: `https://www.carbide.work/support`
@@ -67,7 +71,7 @@ Keep `apps/claude` canonical in the private Carbide repository. From a clean, co
 ```sh
 git subtree split --prefix=apps/claude --branch claude-plugin-release
 git push git@github.com:carbide-work/claude-plugin.git claude-plugin-release:main
-git push git@github.com:carbide-work/claude-plugin.git claude-plugin-release:refs/tags/v2.3.0
+git push git@github.com:carbide-work/claude-plugin.git claude-plugin-release:refs/tags/v1.28.0
 git branch -D claude-plugin-release
 ```
 
