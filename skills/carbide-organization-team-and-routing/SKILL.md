@@ -11,6 +11,7 @@ Start by reading the current state with `get_organization`, member and profile l
 - Make the smallest requested configuration change and re-read it afterward.
 - Add staff profiles before assigning their availability, territory, crew membership, trades, or skills.
 - For production teams, create crew members before crews, then attach members and capabilities with exact IDs.
+- A crew's territory is its postal codes: send the complete list to `update_crew_territory` (read the current `zip_codes` from `list_crews` first, since a code left out is removed).
 - Treat member deactivation, role changes, removals, and routing rule replacement as consequential. State the target and effect before calling the tool.
 
 ## Routing rules
