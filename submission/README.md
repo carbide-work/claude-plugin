@@ -2,6 +2,8 @@
 
 Release policy: keep this package on 1.x; a major version change requires explicit user consent. Version `1.28.0` supersedes the unapproved 2.x and 3.0.0 version labels; the contract changes recorded in those earlier notes still apply.
 
+Version `1.32.1` retires Public Page choice, A/B testing, unit visibility and commercial-bookings controls. Public choices and Customer type follow the published builder; Location always includes an optional unit. Legacy fields and inputs remain compatible and cannot reactivate retired behavior.
+
 Version `1.32.0` adds Schedule Job for organizations with Job Scheduling. `auto_schedule_job` moves an unscheduled production job to `analyzing` and, in the background, places it on the best crew (crew routing rules, ranked by each qualified crew's earliest opening) with a tentative start date; `get_job` shows the result. The crew routing rules returned by `get_crew_routing_rules` now drive that placement. Existing tool names and inputs are unchanged.
 
 Version `1.31.0` adds crew routing rules for organizations with Job Scheduling. `get_crew_routing_rules` reads the ordered rules (seeding the defaults on first read) and `replace_crew_routing_rules` replaces them; rules select, exclude, prioritize or deprioritize crews by customer history, territory, trades, skills or first availability, with conditions on the job's type, territory, category and company. Existing tool names and inputs are unchanged.
@@ -38,7 +40,7 @@ Version `1.23.0` adds contact-owner IDs and relationships to contact-method and 
 
 Version `1.22.0` adds the `browser_tracking_enabled` connection field to existing Google Analytics mutation results. The web app can disable direct GA4 browser tracking while retaining server Measurement Protocol events, so a GTM container can own browser tracking. Existing connections keep direct browser tracking enabled by default.
 
-Version `1.21.0` adds `get_request_intake_definition` and `evaluate_request_intake` for published or pinned questions, and clarifies collection visibility versus explicit template/CRM mappings. Phone definitions add voice-agent guidance prompts and linear question ordering with inherited field names. Fixed contact/property fields are marked managed_by=default_script and excluded from configurable Phone questions. Public Page owns current public choice visibility; legacy field and lead-source flags are compatibility defaults.
+Version `1.21.0` adds `get_request_intake_definition` and `evaluate_request_intake` for published or pinned questions, and clarifies collection visibility versus explicit template/CRM mappings. Phone definitions add voice-agent guidance prompts and linear question ordering with inherited field names. Fixed contact/property fields are marked managed_by=default_script and excluded from configurable Phone questions. Public choices now follow the published builder; legacy field and lead-source flags are compatibility defaults.
 
 Version `1.20.0` retires job block mode. `update_job_scope` no longer accepts `use_blocks` or `crew_size`, and job records the MCP tools return no longer include `use_blocks`. Every job plans with its blocks: a job's `labor_hours` and `value_cents` are its estimate and no longer change its single block, so set a block's hours, crew size and duration with the block tools. `promote_request_to_production` still creates one default block unless `blocks` is given. Other tool names and payloads are unchanged.
 
@@ -54,7 +56,7 @@ Version `1.18.0` adds optional machine-name input to custom-field creation and u
 - Plugin ID: `carbide`
 - Publisher: Carbide
 - Category: Productivity
-- Version: `1.32.0`
+- Version: `1.32.1`
 - Public source repository: `https://github.com/carbide-work/claude-plugin`
 - Homepage: `https://www.carbide.work`
 - Support: `https://www.carbide.work/support`
@@ -79,7 +81,7 @@ Keep `apps/claude` canonical in the private Carbide repository. From a clean, co
 ```sh
 git subtree split --prefix=apps/claude --branch claude-plugin-release
 git push git@github.com:carbide-work/claude-plugin.git claude-plugin-release:main
-git push git@github.com:carbide-work/claude-plugin.git claude-plugin-release:refs/tags/v1.32.0
+git push git@github.com:carbide-work/claude-plugin.git claude-plugin-release:refs/tags/v1.32.1
 git branch -D claude-plugin-release
 ```
 
