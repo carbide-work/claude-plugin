@@ -2,6 +2,8 @@
 
 Release policy: keep this package on 1.x; a major version change requires explicit user consent. Version `1.28.0` supersedes the unapproved 2.x and 3.0.0 version labels; the contract changes recorded in those earlier notes still apply.
 
+Version `1.34.1` adds the OpenAI plugin support URL and updates its submission identifiers, reviewer walkthrough and review scenarios. The MCP server and both portable plugins share this patch version; existing tool names, inputs, outputs and authorization are unchanged.
+
 Version `1.34.0` adds `cancellation_source` to appointment diagnostic records. It names the Google Calendar or Outlook calendar an estimator removed an appointment from when the organization uses bidirectional calendar sync, and is empty otherwise. Existing tool names, inputs and fields are unchanged.
 
 Version `1.33.0` extends request-link presets to shared-builder project, timeline, lead-source, intake-channel and custom-field answers. Public questions receive editable defaults; fields absent from Public are saved server-side. Contact, company, address and consent fields are excluded. New presets validate against tenant-scoped definitions and choices; unchanged legacy values remain stored, and unavailable values are skipped at submission. Estimator-managed links keep their names and owner assignments. Existing tool names and map conventions remain compatible.
