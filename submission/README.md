@@ -1,11 +1,11 @@
 # Carbide Claude community submission
 
+Version `1.36.0` lets `simulate_production_plan` and `apply_plan_scenario` take a `set_block_days` change, which sets or clears the crew size of some of a work block's days, and optionally names their people (each with `day_index`, `crew_size` and optional `member_ids`). The MCP server and both portable plugins share this minor version; existing tool names, other inputs, outputs and authorization are unchanged.
+
 Version `1.35.0` removes production skills throughout Carbide. This is an intentional breaking contract change within the required 1.x version line: skill catalog, member-skill and crew-skill tools are removed, along with skill fields in crew/member/job data, crew routing rules, scheduling results and PaintScout proposals. Integrations must omit those fields and stop calling the removed tools. Trades, roles, equipment and coordination remain supported.
 
 
 Release policy: keep this package on 1.x; a major version change requires explicit user consent. Version `1.28.0` supersedes the unapproved 2.x and 3.0.0 version labels; the contract changes recorded in those earlier notes still apply.
-
-Version `1.34.1` adds the OpenAI plugin support URL and updates its submission identifiers, reviewer walkthrough and review scenarios. The MCP server and both portable plugins share this patch version; existing tool names, inputs, outputs and authorization are unchanged.
 
 Version `1.34.0` adds `cancellation_source` to appointment diagnostic records. It names the Google Calendar or Outlook calendar an estimator removed an appointment from when the organization uses bidirectional calendar sync, and is empty otherwise. Existing tool names, inputs and fields are unchanged.
 
