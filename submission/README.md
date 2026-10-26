@@ -1,5 +1,7 @@
 # Carbide Claude community submission
 
+Version `1.36.1` makes a linked scheduling member use the connected user's first name, last name and email. Account changes synchronize those details; member profile writes cannot override them while linked. Existing tool names and input/output fields remain available. Conflicting scheduling-member emails refuse the change without merging records. Shared scheduling conflict review groups excess-producer blocks by job, with evidence-checked crew-target and roster repairs. Existing MCP tool shapes remain compatible.
+
 Version `1.36.0` lets `simulate_production_plan` and `apply_plan_scenario` take a `set_block_days` change, which sets or clears the crew size of some of a work block's days, and optionally names their people (each with `day_index`, `crew_size` and optional `member_ids`). The MCP server and both portable plugins share this minor version; existing tool names, other inputs, outputs and authorization are unchanged.
 
 Version `1.35.0` removes production skills throughout Carbide. This is an intentional breaking contract change within the required 1.x version line: skill catalog, member-skill and crew-skill tools are removed, along with skill fields in crew/member/job data, crew routing rules, scheduling results and PaintScout proposals. Integrations must omit those fields and stop calling the removed tools. Trades, roles, equipment and coordination remain supported.
