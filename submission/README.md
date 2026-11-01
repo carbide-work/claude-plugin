@@ -1,5 +1,7 @@
 # Carbide Claude community submission
 
+Version `1.40.1` corrects the `get_google_analytics_connection` description: when the Google authorization needs renewing, changes that need the customer's Google account (choosing a stream, Tag Manager setup) stop, but events keep being sent with the stream's API secret. The tool's inputs and outputs are unchanged.
+
 Version `1.40.0` adds `add_crew_trades` and `add_job_producer` production-plan changes, plus optional `project_trade_ids` on changes. Missing-trade suggestions can repair a grouped crew conflict by declaring its missing trades (owners/admins) or assigning qualified, available job producers (members). Every option is simulated and rechecked on apply. Existing change kinds remain available.
 
 Version `1.36.1` makes a linked scheduling member use the connected user's first name, last name and email. Account changes synchronize those details; member profile writes cannot override them while linked. Existing tool names and input/output fields remain available. Conflicting scheduling-member emails refuse the change without merging records. Shared scheduling conflict review groups excess-producer blocks by job, with evidence-checked crew-target and roster repairs. Existing MCP tool shapes remain compatible.
@@ -69,7 +71,7 @@ Version `1.18.0` adds optional machine-name input to custom-field creation and u
 - Plugin ID: `carbide`
 - Publisher: Carbide
 - Category: Productivity
-- Version: `1.40.0`
+- Version: `1.40.1`
 - Public source repository: `https://github.com/carbide-work/claude-plugin`
 - Homepage: `https://www.carbide.work`
 - Support: `https://www.carbide.work/support`
