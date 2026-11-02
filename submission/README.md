@@ -1,5 +1,7 @@
 # Carbide Claude community submission
 
+Version `1.41.0` adds `open_sync_issues` to `get_integration_diagnostic_evidence`: the contact's open HubSpot external sync issues by kind, each with a count and whether one keeps its field out of the sync, never their fields, details or values. `create_contact` and `update_contact` with `commercial_customer: false` (or without it) no longer unlink the contact's companies; saving a contact as commercial still requires a company and still replaces its other companies. Clients that relied on `commercial_customer: false` to unlink companies must stop expecting it. Every HubSpot connection now runs the external sync engine, so `get_integration_diagnostic_evidence` no longer returns `sync_error_present` or `sync_error_at` (HubSpot sync problems are no longer saved on the contact; `open_sync_issues` reports them), and `get_background_job_evidence` for a contact lists the engine's HubSpot sync jobs that name the contact instead of the retired contact push jobs. Tool names, inputs and other outputs are unchanged.
+
 Version `1.40.1` corrects the `get_google_analytics_connection` description: when the Google authorization needs renewing, changes that need the customer's Google account (choosing a stream, Tag Manager setup) stop, but events keep being sent with the stream's API secret. The tool's inputs and outputs are unchanged.
 
 Version `1.40.0` adds `add_crew_trades` and `add_job_producer` production-plan changes, plus optional `project_trade_ids` on changes. Missing-trade suggestions can repair a grouped crew conflict by declaring its missing trades (owners/admins) or assigning qualified, available job producers (members). Every option is simulated and rechecked on apply. Existing change kinds remain available.
@@ -71,7 +73,7 @@ Version `1.18.0` adds optional machine-name input to custom-field creation and u
 - Plugin ID: `carbide`
 - Publisher: Carbide
 - Category: Productivity
-- Version: `1.40.1`
+- Version: `1.41.0`
 - Public source repository: `https://github.com/carbide-work/claude-plugin`
 - Homepage: `https://www.carbide.work`
 - Support: `https://www.carbide.work/support`
