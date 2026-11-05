@@ -1,5 +1,7 @@
 # Carbide Claude community submission
 
+Version `1.48.1` marks `create_phone_agent`, `update_phone_agent` and `pause_phone_agent` as open-world and adds specific annotation explanations for external caller interactions. Draft creation still requires separate phone-number purchase and provisioning in web settings; ready-agent updates sync to the telephony provider in the background; pausing stops the agent answering calls. Tool schemas, authorization and phone-agent conversation behavior are unchanged.
+
 Version `1.48.0` updates request workflow results to use `needs_release` for confirmed appointments waiting for office release. This replaces the previous `need_approval` value in `list_requests` and `get_request`; consumers must accept the renamed value. Tool names, inputs and authorization remain unchanged. The shared server and portable plugin packages remain on the required 1.x major line.
 
 Version `1.47.2` classifies appointment and booking reminder create/update/delete tools as open-world because their settings control customer emails. Tool names, inputs and authorization are unchanged. The ChatGPT ZIP now imports five positive and three negative reviewer cases, the existing walkthrough URL and release notes from `extensions.com.openai`; reviewer credentials remain exclusively in the secure portal. Run the scenarios with the dedicated demo reviewer account before submitting.
