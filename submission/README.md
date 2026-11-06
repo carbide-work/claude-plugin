@@ -1,5 +1,7 @@
 # Carbide Claude community submission
 
+Version `1.49.0` adds optional `producer_slots` to block and block-day writes: ordered generic or named producers with planned hours and daily production value. Existing count/member inputs remain supported. Hours-mode block budget edits balance planned day/producer hours without changing capacity profiles. Block records include effective day slots; staffing changes retain tenant, roster, and availability checks.
+
 Version `1.48.1` marks `create_phone_agent`, `update_phone_agent` and `pause_phone_agent` as open-world and adds specific annotation explanations for external caller interactions. Draft creation still requires separate phone-number purchase and provisioning in web settings; ready-agent updates sync to the telephony provider in the background; pausing stops the agent answering calls. Tool schemas, authorization and phone-agent conversation behavior are unchanged.
 
 Version `1.48.0` updates request workflow results to use `needs_release` for confirmed appointments waiting for office release. This replaces the previous `need_approval` value in `list_requests` and `get_request`; consumers must accept the renamed value. Tool names, inputs and authorization remain unchanged. The shared server and portable plugin packages remain on the required 1.x major line.
