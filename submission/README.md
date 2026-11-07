@@ -1,5 +1,7 @@
 # Carbide Claude community submission
 
+Version `1.50.0` removes `pipeline_crm_deal_sync_error` and `pipeline_crm_deal_sync_error_at` from the fields `list_requests` can filter and sort by. Carbide stopped writing them when the external sync engine became Pipeline CRM's only writer, so they were always empty; Pipeline CRM problems show as sync issues instead. Results, other inputs and authorization are unchanged. The shared server and portable plugin packages remain on the required 1.x major line.
+
 Version `1.49.1` releases unused Google and Outlook connections immediately when their last calendar is disconnected. Connections still used by another active calendar or integration remain connected.
 
 Version `1.49.0` adds optional `producer_slots` to block and block-day writes: ordered generic or named producers with planned hours and daily production value. Existing count/member inputs remain supported. Hours-mode block budget edits balance planned day/producer hours without changing capacity profiles. Block records include effective day slots; staffing changes retain tenant, roster, and availability checks.
