@@ -1,5 +1,7 @@
 # Carbide Claude community submission
 
+
+Version `1.52.1` fixes estimator customer creation with automatic self-assignment while preserving reassignment restrictions. Assignment refusals now retain a useful permission error. Tool names and input/output schemas are unchanged.
 Version `1.52.0` adds a configurable initial PaintScout quote status for request creation or appointment booking and makes quote synchronization outbound-only. Pending creation retains captured settings; disabling outbound quote sync cancels unstarted creation. Configuration remains owner/admin-only with `mcp.write`.
 
 Version `1.51.0` adds read and operational job-import tools for text, documents and PaintScout. Imports retain member permissions, Job Scheduling access, signed uploads, reviewed application and stale-state protection. Mutations require `mcp.operate`; existing grants gain no new scopes.
