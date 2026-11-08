@@ -1,5 +1,7 @@
 # Carbide Claude community submission
 
+Version `1.51.0` adds read and operational job-import tools for text, documents and PaintScout. Imports retain member permissions, Job Scheduling access, signed uploads, reviewed application and stale-state protection. Mutations require `mcp.operate`; existing grants gain no new scopes.
+
 Version `1.50.0` removes `pipeline_crm_deal_sync_error` and `pipeline_crm_deal_sync_error_at` from the fields `list_requests` can filter and sort by. Carbide stopped writing them when the external sync engine became Pipeline CRM's only writer, so they were always empty; Pipeline CRM problems show as sync issues instead. Results, other inputs and authorization are unchanged. The shared server and portable plugin packages remain on the required 1.x major line.
 
 Version `1.49.1` releases unused Google and Outlook connections immediately when their last calendar is disconnected. Connections still used by another active calendar or integration remain connected.
