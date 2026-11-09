@@ -1,6 +1,7 @@
 # Carbide Claude community submission
 
 
+Version `1.53.0` adds an optional phone extension (1 to 10 digits) to contact and company phone numbers. `create_contact`, `update_contact`, `create_company` and `update_company` accept `phone_number_extension`, and `create_contact_phone`, `update_contact_phone`, `create_company_phone` and `update_company_phone` accept `extension`; reads return them. An extension typed after the number (`555-555-0123 x12`) is split off, and changing a number without sending an extension clears the old one. Existing inputs, results and scopes are unchanged.
 Version `1.52.1` fixes estimator customer creation with automatic self-assignment while preserving reassignment restrictions. Assignment refusals now retain a useful permission error. Tool names and input/output schemas are unchanged.
 Version `1.52.0` adds a configurable initial PaintScout quote status for request creation or appointment booking and makes quote synchronization outbound-only. Pending creation retains captured settings; disabling outbound quote sync cancels unstarted creation. Configuration remains owner/admin-only with `mcp.write`.
 
