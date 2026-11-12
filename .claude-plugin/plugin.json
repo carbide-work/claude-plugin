@@ -1,6 +1,6 @@
 {
   "name": "carbide",
-  "version": "2.0.0",
+  "version": "1.58.1",
   "description": "Run and configure your contracting operations from Claude Code.",
   "author": {
     "name": "Carbide",
@@ -9,6 +9,7 @@
   },
   "homepage": "https://www.carbide.work",
   "repository": "https://github.com/carbide-work/claude-plugin",
+  "privacyPolicyUrl": "https://www.carbide.work/privacy",
   "license": "MIT",
   "keywords": [
     "contracting",
