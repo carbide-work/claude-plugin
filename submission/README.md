@@ -133,7 +133,7 @@ Suggested long description:
 
 ## Publish the public mirror
 
-Keep `apps/claude` canonical in the private Carbide repository. After the private repository's `CI` workflow succeeds on `main`, `.github/workflows/claude-plugin-mirror.yml` splits this subtree and updates the public mirror's `main` branch. It preserves the existing mirror history on the initial sync and adds each canonical split as a parent of later sync commits. When the package manifest version changes, it also creates the matching `v<version>` tag. The workflow never force-pushes or reuses a release tag.
+Keep `apps/claude` canonical in the private Carbide repository. After the private repository's `CI` workflow succeeds on `main`, `.github/workflows/claude-plugin-mirror.yml` splits this subtree and updates the public mirror's `main` branch. It preserves the existing mirror history on the initial sync and adds each canonical split as a parent of later sync commits. On every successful sync, it verifies the matching `v<version>` tag and creates it if missing, so an earlier failed sync cannot leave the release untagged. The workflow never force-pushes or reuses a release tag.
 
 The private repository stores a write-enabled deploy key scoped to `carbide-work/claude-plugin` as the Actions secret `CLAUDE_PLUGIN_MIRROR_DEPLOY_KEY`. If the mirror push fails, inspect the workflow run and reconcile the repository history; never force-push an existing mirror or reuse a release tag. Clone the public mirror into a temporary directory and run the same validation against that clone before submitting.
 
