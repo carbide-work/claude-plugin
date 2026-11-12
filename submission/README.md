@@ -1,5 +1,7 @@
 # Carbide Claude community submission
 
+Version `1.58.1` adds the Carbide directory icon and explicit privacy-policy metadata to the Claude plugin package. MCP tools and behavior are unchanged.
+
 Version `1.58.0`: `list_job_imports` and `get_job_import` can return a job update with status `discarded`: an update of an existing job started from Import from PaintScout that its import no longer uses, because staff chose another job, created a job instead or dismissed the import. A discarded update cannot be retried or applied. `list_job_imports` also accepts `source_quote` among its sort and load fields, the readable projection of a PaintScout import's frozen quote. The change is additive: tool names, inputs, scopes and authorization are otherwise unchanged. The shared server and portable plugin packages remain on the required 1.x major line.
 
 Version `1.55.0` adds each work day's own start and end time (`monday_start_time` through `sunday_end_time`, null when the day uses the default work day) to `get_organization_diagnostic_configuration`. The change is additive: existing fields, tool names, inputs and authorization are unchanged. The shared server and portable plugin packages remain on the required 1.x major line.
@@ -111,7 +113,7 @@ Version `1.18.0` adds optional machine-name input to custom-field creation and u
 - Plugin ID: `carbide`
 - Publisher: Carbide
 - Category: Productivity
-- Version: `1.41.0`
+- Version: `1.58.1`
 - Public source repository: `https://github.com/carbide-work/claude-plugin`
 - Homepage: `https://www.carbide.work`
 - Support: `https://www.carbide.work/support`
@@ -131,16 +133,10 @@ Suggested long description:
 
 ## Publish the public mirror
 
-Keep `apps/claude` canonical in the private Carbide repository. From a clean, committed release checkout, publish only this subtree to the public mirror:
+Keep `apps/claude` canonical in the private Carbide repository. After the private repository's `CI` workflow succeeds on `main`, `.github/workflows/claude-plugin-mirror.yml` splits this subtree and updates the public mirror's `main` branch. It preserves the existing mirror history on the initial sync and adds each canonical split as a parent of later sync commits. When the package manifest version changes, it also creates the matching `v<version>` tag. The workflow never force-pushes or reuses a release tag.
 
-```sh
-git subtree split --prefix=apps/claude --branch claude-plugin-release
-git push git@github.com:carbide-work/claude-plugin.git claude-plugin-release:main
-git push git@github.com:carbide-work/claude-plugin.git claude-plugin-release:refs/tags/v1.33.0
-git branch -D claude-plugin-release
-```
+The private repository stores a write-enabled deploy key scoped to `carbide-work/claude-plugin` as the Actions secret `CLAUDE_PLUGIN_MIRROR_DEPLOY_KEY`. If the mirror push fails, inspect the workflow run and reconcile the repository history; never force-push an existing mirror or reuse a release tag. Clone the public mirror into a temporary directory and run the same validation against that clone before submitting.
 
-Create the public repository before the first push. Do not force-push an existing mirror or reuse a release tag. Clone the public mirror into a temporary directory and run the same validation against that clone before submitting.
 
 ## Reviewer account
 
