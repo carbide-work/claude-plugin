@@ -1,5 +1,7 @@
 # Carbide Claude community submission
 
+Version `1.71.2`: `cancel_appointment` runs the same action as the public GraphQL API's `cancelAppointment`. That action now requires an active membership in the organization as a strict policy, as GraphQL's copy did. Members already needed one, so inputs, results and who may cancel are unchanged.
+
 Version `1.71.1`: `simulate_estimator_routing` and `simulate_csr_routing` run the same typed actions as the public GraphQL API. Their inputs and permissions are unchanged and their results carry the same fields; a field without a value comes back as null.
 
 Version `1.71.0` (breaking, shipped on 1.x as the user directed): the estimator write tools `remove_estimator_profile`, `save_estimator_availability`, `update_estimator_profile_performance_rate`, `save_estimator_territory_zipcodes`, `clear_estimator_territory` and `disconnect_estimator_calendar` run the same typed actions as the public GraphQL API. Their results name the saved record `entry_id` instead of `id`; `update_estimator_profile_performance_rate` returns the saved `performance_rate`. `disconnect_estimator_calendar` no longer takes `oauth_token_id`, which it ignored: the calendar's stored connection is always used. `save_estimator_availability` reads `work_days` entries by their documented snake_case keys only. `set_estimator_setting_default` is unchanged.
