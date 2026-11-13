@@ -1,5 +1,7 @@
 # Carbide Claude community submission
 
+Version `1.68.0`: estimate scheduling starting addresses. New `get_estimate_scheduling_settings` and `update_estimate_scheduling_settings` (owner/admin) read and set the organization's starting address, and new `get_estimator_starting_address` reads where an estimator's day starts (owners, admins and the estimator themselves). `update_estimator_profile` accepts an optional `starting_address_id`. When a starting address applies, the drive from it to an estimator's first appointment of the day is measured and limited by the maximum driving time, so booking, availability and evidence tools can report a previous drive with source `starting_address` (its origin street is never returned). The change is additive: other tool names, inputs, results and scopes are unchanged. The shared server and portable plugin packages remain on the required 1.x major line.
+
 Version `1.67.2`: the email and calendar invite template list and update tools run the same actions as the public GraphQL API and the app, with unchanged names, inputs, results, scopes and authorization. The shared server and portable plugin packages remain on the required 1.x major line.
 
 Version `1.67.1`: the get and replace routing rule tools for estimators, CSRs and crews run the same actions as the public GraphQL API and the app. Their names, input schemas, results, scopes and authorization are unchanged. The shared server and portable plugin packages remain on the required 1.x major line.
