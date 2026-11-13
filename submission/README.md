@@ -1,5 +1,7 @@
 # Carbide Claude community submission
 
+Version `1.67.1`: the get and replace routing rule tools for estimators, CSRs and crews run the same actions as the public GraphQL API and the app. Their names, input schemas, results, scopes and authorization are unchanged. The shared server and portable plugin packages remain on the required 1.x major line.
+
 Version `1.67.0` (breaking, shipped on 1.x as the user directed): `list_crews` and `list_crew_members` run the crew and member directories the public GraphQL API and the app use. They now include archived rows, with `archived_at` set, unless `input.statuses` is `["active"]`; `input.statuses: ["archived"]` replaces `input.include_archived: true`. Search covers more fields, `list_crews` filters by `input.types`, both sort by `input.order_by`, and pages default to 50 (maximum 500). Other tool names, inputs, results and scopes are unchanged. The shared server and portable plugin packages remain on the required 1.x major line.
 
 Version `1.66.1`: the project area, project trade, equipment and coordination item tools run the same actions as the public GraphQL API and the app. `create_project_area` now treats `position` as optional, appending the new area at the end, as the app always did; everything else about these tools is unchanged. The shared server and portable plugin packages remain on the required 1.x major line.
