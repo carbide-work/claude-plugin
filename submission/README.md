@@ -1,5 +1,7 @@
 # Carbide Claude community submission
 
+Version `1.71.3`: `update_organization_estimator_appointment_limit` and `update_public_page_profile` run the same actions as the public GraphQL API's `updateOrganizationEstimatorAppointmentLimit` and `updatePublicPageProfile`. Their policies now refuse anyone who is not an active owner or admin before checking the organization; inputs, results and who may call them are unchanged.
+
 Version `1.71.2`: `cancel_appointment` runs the same action as the public GraphQL API's `cancelAppointment`. That action now requires an active membership in the organization as a strict policy, as GraphQL's copy did. Members already needed one, so inputs, results and who may cancel are unchanged.
 
 Version `1.71.1`: `simulate_estimator_routing` and `simulate_csr_routing` run the same typed actions as the public GraphQL API. Their inputs and permissions are unchanged and their results carry the same fields; a field without a value comes back as null.
