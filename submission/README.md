@@ -1,5 +1,7 @@
 # Carbide Claude community submission
 
+Version `1.66.1`: the project area, project trade, equipment and coordination item tools run the same actions as the public GraphQL API and the app. `create_project_area` now treats `position` as optional, appending the new area at the end, as the app always did; everything else about these tools is unchanged. The shared server and portable plugin packages remain on the required 1.x major line.
+
 Version `1.66.0` (breaking, shipped on 1.x as the user directed): `activate_dispatcher_profile` and `deactivate_dispatcher_profile` are replaced by one `update_dispatcher_profile` tool, which takes the profile `id` and `input.active`, with the same owner/admin authorization and `mcp.write` scope. `list_dispatcher_profiles` runs the CSR directory the public GraphQL API and the app use: `input.search` also matches phone numbers, `input.statuses` narrows by status, rows sort by first name, and pages default to 100 (maximum 500). `list_booking_reminder_settings` and the booking reminder writes run the app's actions, with unchanged inputs and results. Other tool names, inputs, results and scopes are unchanged. The shared server and portable plugin packages remain on the required 1.x major line.
 
 Version `1.65.1`: the request outcome reason, request source definition and value, and request link tools run the same actions as the public GraphQL API and the app, with unchanged names, inputs, results, scopes and authorization. The shared server and portable plugin packages remain on the required 1.x major line.
