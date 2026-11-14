@@ -1,5 +1,7 @@
 # Carbide Claude community submission
 
+Version `1.72.0`: `list_estimator_profiles` runs the same read as the public GraphQL API's `listAllEstimatorProfiles`. It gains optional `calendar_states`, `slot_durations`, `calendar_operator`, `slot_operator` and `order` inputs, allows up to 500 rows per page, and sorts by first name. Who may call it is unchanged: any active member.
+
 Version `1.71.5`: `get_organization` and `get_public_page` run the same reads as the public GraphQL API's `getOrganization` and `getPublicPage`. Their results and access are unchanged: any active member of the organization.
 
 Version `1.71.4`: the `service_routing_instructions` input of `update_organization_profile` now carries a description: the organization's own policy for which requests need staff review instead of self-booking, with empty meaning every request may self-book. Behavior is unchanged.
