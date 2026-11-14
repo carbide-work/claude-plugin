@@ -1,5 +1,7 @@
 # Carbide Claude community submission
 
+Version `1.80.1`: `create_crew_member` accepts `crew_ids`, `invite_to_organization` and `invitation_role` left out or null; they default to no crews, no invitation and the member role. Nothing else changes.
+
 Version `1.80.0` (breaking, shipped on 1.x as the user directed): the last tools run the same actions as the public GraphQL API.
 
 - **Crews and members:** `assign_crew_members`, `remove_crew_members`, `assign_crew_trade_capability`, `delete_crew_trade_capability`, `assign_crew_member_trade` and `delete_crew_member_trade` are removed. `update_crew_details` replaces a crew's `member_ids` and `trade_capabilities`, starting from `list_crews`' new `assigned_member_ids`; `update_crew_member_profile` replaces a member's `crew_ids` and `trade_ids`, and `update_member_trade` sets a trade's proficiency. `create_crew_member` also takes `crew_ids` and an invitation.
