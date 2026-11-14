@@ -1,5 +1,7 @@
 # Carbide Claude community submission
 
+Version `1.71.5`: `get_organization` and `get_public_page` run the same reads as the public GraphQL API's `getOrganization` and `getPublicPage`. Their results and access are unchanged: any active member of the organization.
+
 Version `1.71.4`: the `service_routing_instructions` input of `update_organization_profile` now carries a description: the organization's own policy for which requests need staff review instead of self-booking, with empty meaning every request may self-book. Behavior is unchanged.
 
 Version `1.71.3`: `update_organization_estimator_appointment_limit` and `update_public_page_profile` run the same actions as the public GraphQL API's `updateOrganizationEstimatorAppointmentLimit` and `updatePublicPageProfile`. Their policies now refuse anyone who is not an active owner or admin before checking the organization; inputs, results and who may call them are unchanged.
