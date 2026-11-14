@@ -1,5 +1,7 @@
 # Carbide Claude community submission
 
+Version `1.74.0` (breaking, shipped on 1.x as the user directed): `add_contact_property` and `add_company_property` return `property_id` (instead of `id`) and `status`, the typed result the public GraphQL API returns. `create_crew` accepts optional `member_ids`, a lead (`lead_member_id` or the custom lead fields), `email` and `phone_number`. `update_crew_details` refuses `member_ids` that are not active members of the organization. `list_estimator_availability_extensions` defaults `from_date` to today and sorts by date. `get_google_analytics_connection` and `update_property_note` run the same actions as the public GraphQL API; their results are unchanged.
+
 Version `1.73.0`: `list_appointments` and `get_appointment` run the same reads as the public GraphQL API's `listAppointments` and `getAppointment`. `list_appointments` gains optional `filters` (request, contact, company, job, historical) and `order_by` inputs, and allows up to 500 rows per page. Its results and access are unchanged.
 
 Version `1.72.0`: `list_estimator_profiles` runs the same read as the public GraphQL API's `listAllEstimatorProfiles`. It gains optional `calendar_states`, `slot_durations`, `calendar_operator`, `slot_operator` and `order` inputs, allows up to 500 rows per page, and sorts by first name. Who may call it is unchanged: any active member.
