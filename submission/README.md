@@ -1,5 +1,17 @@
 # Carbide Claude community submission
 
+Version `1.80.0` (breaking, shipped on 1.x as the user directed): the last tools run the same actions as the public GraphQL API.
+
+- **Crews and members:** `assign_crew_members`, `remove_crew_members`, `assign_crew_trade_capability`, `delete_crew_trade_capability`, `assign_crew_member_trade` and `delete_crew_member_trade` are removed. `update_crew_details` replaces a crew's `member_ids` and `trade_capabilities`, starting from `list_crews`' new `assigned_member_ids`; `update_crew_member_profile` replaces a member's `crew_ids` and `trade_ids`, and `update_member_trade` sets a trade's proficiency. `create_crew_member` also takes `crew_ids` and an invitation.
+- **Jobs:** `change_job_status` replaces `start_job` and `complete_job`; scheduled, in-progress and completed statuses need the job's planned start date.
+- **Job colors:** `create_job_colors`, `update_job_colors` and `remove_job_colors` replace the single-row tools and take a batch (`assignments` or `ids`).
+- **Plans:** `simulate_production_plan` and `apply_plan_scenario` return a schedule calculation whose `result` holds the scenario and, for a simulation, `applyAvailable` and the instruction; `get_schedule_calculation` reads it by id.
+- **Requests:** `list_requests` is the request lists' read: search matches customer names and email, the company, the work description and summary, the address's street and city, custom field answers and request numbers, results come in `order_by` order (no `sort`), and pages default to 100 rows, up to 500. `update_request_intake` is removed: use `update_request`, `update_request_form_answers`, `set_request_project_property` and `set_request_slot_size`, as the request page does. A request's customer or type no longer changes through MCP, as on the web.
+- **Properties:** `create_customer_property` and `create_request_project_property` replace `create_request_property`.
+- **Notes:** `create_note` refuses a record that does not exist in the organization and accepts an idempotency key.
+- **Addresses:** the address picker's candidates carry `place_id`, `main_text` and `secondary_text` (no `id`); `find_address_options` and `select_address_option` are also the public `findAddressOptions` and `selectAddressOption`.
+- **Unchanged inputs and results:** `list_job_imports` (also the public `listJobImports`) and `search_paint_options`.
+
 Version `1.79.1`: `list_estimator_work_addresses` and `delete_estimator_work_address` describe work addresses as the places a virtual appointment is held from, since virtual appointments replaced request work time. Inputs, results and access are unchanged.
 
 Version `1.79.0` (breaking, shipped on 1.x as the user directed): more tools run the same actions as the public GraphQL API.
