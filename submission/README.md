@@ -1,5 +1,7 @@
 # Carbide Claude community submission
 
+Version `1.81.0`: `list_webhook_endpoints` returns `payload_version`. Endpoints created from this version on receive v2 webhook payloads (the event id and type, the changed object's type and GraphQL global ID, `occurred_at` and the organization's GraphQL global ID); older endpoints keep the legacy JSON:API payload. `create_webhook_endpoint` describes the v2 body. Other inputs, results and access are unchanged.
+
 Version `1.80.1`: `create_crew_member` accepts `crew_ids`, `invite_to_organization` and `invitation_role` left out or null; they default to no crews, no invitation and the member role. Nothing else changes.
 
 Version `1.80.0` (breaking, shipped on 1.x as the user directed): the last tools run the same actions as the public GraphQL API.
