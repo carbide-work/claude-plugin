@@ -1,5 +1,7 @@
 # Carbide Claude community submission
 
+Version `1.79.1`: `list_estimator_work_addresses` and `delete_estimator_work_address` describe work addresses as the places a virtual appointment is held from, since virtual appointments replaced request work time. Inputs, results and access are unchanged.
+
 Version `1.79.0` (breaking, shipped on 1.x as the user directed): more tools run the same actions as the public GraphQL API.
 
 - `add_estimator_profile_to_member` and `add_dispatcher_profile_to_member` return `profile_id`, `message` and `active`, without the synthetic `id`.
