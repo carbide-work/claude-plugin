@@ -1,5 +1,7 @@
 # Carbide Claude community submission
 
+Version `1.82.2`: `list_health_check_issues` runs from Carbide's reporting domain instead of its accounts domain, with unchanged inputs, results and access.
+
 Version `1.82.1`: the email sending tools (`list_sending_domains`, `check_email_sending_domain_verification`, `list_email_sending_identities`, `configure_default_email_sending_identity`, `disconnect_custom_email_sender`) run from Carbide's notifications domain instead of its accounts domain, with unchanged names, inputs, results and access.
 
 Version `1.82.0`: `create_request` and `update_request` accept `hubspot_deal_id` and `pipeline_crm_deal_id` to link a request to a HubSpot or Pipeline CRM deal (refused when the CRM is not connected, the deal is linked to another request or job, or the request already has a different deal). `book_appointment` accepts `send_confirmation_later`, which books an in-person appointment without inviting the customer or sending any message; the new `send_appointment_confirmation` tool sends them. `cancel_appointment` also cancels an appointment the estimator removed from their calendar for good, and its `cancellation_reason` is required only for a booked appointment.
