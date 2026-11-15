@@ -1,5 +1,7 @@
 # Carbide Claude community submission
 
+Version `1.82.5`: the project area tools (`list_project_areas`, `create_project_area`, `update_project_area`, `delete_project_area`) run from Carbide's new requests domain instead of its projects domain, with unchanged names, inputs, results and access.
+
 Version `1.82.4`: the crew, crew member, trade and capability tools (`list_project_trades`, `create_project_trade`, `update_project_trade`, `delete_project_trade`, `list_crew_members`, `create_crew_member`, `update_crew_member_profile`, `archive_crew_member`, `unarchive_crew_member`, `delete_crew_member`, `list_crews`, `create_crew`, `update_crew_details`, `update_crew_territory`, `archive_crew`, `unarchive_crew`, `delete_crew`, `update_crew_trade`, `update_member_trade`) run from Carbide's new workforce domain instead of its projects domain, with unchanged names, inputs, results and access.
 
 Version `1.82.3`: the behavioral diagnostic tools (`search_behavioral_knowledge`, `get_behavioral_knowledge`, `read_diagnostic_records`, `get_diagnostic_history`, `get_background_job_evidence`, `search_operational_records`) run from Carbide's reporting domain instead of its AI domain, with unchanged inputs, results and access.
