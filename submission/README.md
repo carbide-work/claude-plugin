@@ -1,5 +1,7 @@
 # Carbide Claude community submission
 
+Version `1.82.0`: `create_request` and `update_request` accept `hubspot_deal_id` and `pipeline_crm_deal_id` to link a request to a HubSpot or Pipeline CRM deal (refused when the CRM is not connected, the deal is linked to another request or job, or the request already has a different deal). `book_appointment` accepts `send_confirmation_later`, which books an in-person appointment without inviting the customer or sending any message; the new `send_appointment_confirmation` tool sends them. `cancel_appointment` also cancels an appointment the estimator removed from their calendar for good, and its `cancellation_reason` is required only for a booked appointment.
+
 Version `1.81.0`: `list_webhook_endpoints` returns `payload_version`. Endpoints created from this version on receive v2 webhook payloads (the event id and type, the changed object's type and GraphQL global ID, `occurred_at` and the organization's GraphQL global ID); older endpoints keep the legacy JSON:API payload. `create_webhook_endpoint` describes the v2 body. Other inputs, results and access are unchanged.
 
 Version `1.80.1`: `create_crew_member` accepts `crew_ids`, `invite_to_organization` and `invitation_role` left out or null; they default to no crews, no invitation and the member role. Nothing else changes.
