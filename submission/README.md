@@ -1,5 +1,7 @@
 # Carbide Claude community submission
 
+Version `1.82.7`: `list_oauth_connection_statuses` runs from Carbide's new connections domain instead of its accounts domain, with unchanged inputs, results and access.
+
 Version `1.82.6`: the job, block, equipment, coordination, paint option, job color, job constraint, job import, checklist and plan tools run from Carbide's new job scheduling domain instead of its CRM and projects domains, with unchanged names, inputs, results and access.
 
 Version `1.82.5`: the project area tools (`list_project_areas`, `create_project_area`, `update_project_area`, `delete_project_area`) run from Carbide's new requests domain instead of its projects domain, with unchanged names, inputs, results and access.
