@@ -1,5 +1,7 @@
 # Carbide Claude community submission
 
+Version `1.82.3`: the behavioral diagnostic tools (`search_behavioral_knowledge`, `get_behavioral_knowledge`, `read_diagnostic_records`, `get_diagnostic_history`, `get_background_job_evidence`, `search_operational_records`) run from Carbide's reporting domain instead of its AI domain, with unchanged inputs, results and access.
+
 Version `1.82.2`: `list_health_check_issues` runs from Carbide's reporting domain instead of its accounts domain, with unchanged inputs, results and access.
 
 Version `1.82.1`: the email sending tools (`list_sending_domains`, `check_email_sending_domain_verification`, `list_email_sending_identities`, `configure_default_email_sending_identity`, `disconnect_custom_email_sender`) run from Carbide's notifications domain instead of its accounts domain, with unchanged names, inputs, results and access.
