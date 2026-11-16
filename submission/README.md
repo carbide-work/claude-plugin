@@ -1,5 +1,7 @@
 # Carbide Claude community submission
 
+Version `1.83.0`: a block created without `producer_slots` (`create_block`, or an `add_block` change in `simulate_production_plan` and `apply_plan_scenario`) starts with a default team from the organization's role settings: one seat for each producing role required per job that fits the block's trades, the rest of its crew size split between the fitting producing roles with no maximum per job, else open seats, and the job's producers in seats of their own role; its `crew_size` becomes the number of seats. A producer slot without a `role_id` is an open seat and names nobody. A role's maximum per job is a hard cap: `create_block`, `update_block`, `update_block_day`, `assign_block_members` and `assign_block_day_members` refuse a change that raises a role's seats or named people above it with "<Role> is limited to <max> per job", while counts already above a lowered maximum may stay. Tool names and inputs are unchanged.
+
 Version `1.82.7`: `list_oauth_connection_statuses` runs from Carbide's new connections domain instead of its accounts domain, with unchanged inputs, results and access.
 
 Version `1.82.6`: the job, block, equipment, coordination, paint option, job color, job constraint, job import, checklist and plan tools run from Carbide's new job scheduling domain instead of its CRM and projects domains, with unchanged names, inputs, results and access.
