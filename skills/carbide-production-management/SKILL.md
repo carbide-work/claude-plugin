@@ -7,6 +7,7 @@ description: Manage Carbide production jobs, scope, teams, blocks, crews, constr
 
 1. Resolve the job, blocks, crews, crew members, constraints, equipment, and coordination items with `search_operational_records` and the production list tools.
    When promoting a request, omit `blocks` to create one default block containing every active trade, or supply `blocks` to create exactly that initial plan instead. Every job plans with its blocks: the job's scope hours and value are its estimate and never change a block, so set hours, crew size and duration on the blocks themselves.
+   A block created without `producer_slots` gets its default team from the role settings: one seat for each producing role required per job that fits its trades, the rest split between fitting roles with no maximum per job, else open seats (no `role_id`, naming nobody), with the job's producers in seats of their role. Pass `producer_slots` only to choose the seats yourself; a role's seats and named people stop at its maximum per job.
 2. For schedule changes, call `simulate_production_plan` with the proposed changes and locks. Explain conflicts, shortages, and non-applicable scenarios.
 3. Call `apply_plan_scenario` only for a valid scenario that matches the user's requested change. Never use it to acknowledge unresolved conflicts.
 4. Use the typed job, block, team, color, constraint, checklist, and check-in tools for the smallest change. Re-read the affected records afterward.
