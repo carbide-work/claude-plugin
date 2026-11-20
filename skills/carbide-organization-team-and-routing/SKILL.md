@@ -22,7 +22,8 @@ The organization routes estimators and CSRs with ordered rule lists.
 - Each rule is a verb (select, exclude, prioritize, deprioritize) applied to the estimators its qualifier picks: who match or don't match an attribute, with highest or lowest of a ranked value, or chosen estimators.
 - Send the complete ordered list to `replace_estimator_routing_rules`; a rule left out is deleted. Run `simulate_estimator_routing` with a realistic request before and after a change, and describe the difference.
 - CSR rules work the same way through `get_csr_routing_rules`, `replace_csr_routing_rules` and `simulate_csr_routing`; CSR ids are user ids from `list_dispatcher_profiles`.
-- Crew rules (Job Scheduling only) decide which crew Schedule Job (`auto_schedule_job`) places a job on: read `get_crew_routing_rules`, then send the complete ordered list to `replace_crew_routing_rules`. They use the same verbs and qualifiers over customer history, territory, trades and first availability, with crew ids from `list_crews`.
+- Crew rules (Job Scheduling only) decide which crew Schedule Job (`auto_schedule_job`) places a job on: read `get_crew_routing_rules`, then send the complete ordered list to `replace_crew_routing_rules`. They use the same verbs and qualifiers over customer history, territory, trades and first availability, with crew ids from `list_crews`. They are the Crew assignment tab of Settings → Job Scheduling → Scheduling rules.
+- Crew size rules (Job Scheduling only, the Crew size tab of the same page) decide how many people a new work block gets from its own labor hours or production value: read `get_job_scheduling_settings`, then send the complete ordered `crew_size_rules` list (and `default_crew_size` for blocks no rule matches) to `update_job_scheduling_settings`. The first matching rule decides. Saving them never resizes an existing block.
 
 ## Estimator settings
 
