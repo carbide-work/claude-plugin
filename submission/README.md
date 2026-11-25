@@ -1,5 +1,7 @@
 # Carbide Claude community submission
 
+Version `1.100.0`: a job's start is the day its first work block starts. `update_job_plan`'s `planned_start_date` sets that day: every work block moves by the days between the job's first block start and it, so the first block starts there; before, the move was measured from the date the job was last given, which no block may start on. Clearing it returns every picked start to following the job, and `change_job_status` needs a work block with a start date for `tentatively_scheduled`, `scheduled`, `in_progress` and `completed`. Tool names and parameters are unchanged.
+
 Version `1.99.0`: a work block that depends on no other block has its own start whenever its job has one. `create_block` and `update_block` give such a block the job's start, forward to a day it works, unless `manual_start_date` is set; before, it followed the job's start. Removing a block's last dependency gives it the job's start too, and giving a block its first dependency makes it start after them, unless the same update sets `manual_start_date`. `update_job_plan` on a job that had no start gives that start to its blocks without dependencies. No block's dates change.
 
 Version `1.98.0`: `update_job_plan` moves every work block with the job. When the planned start moves, a block whose start or end was picked moves that date by the same number of days, forward to a day the block works; before, picked dates stayed where they were. Clearing the start returns every picked start to following the job.
